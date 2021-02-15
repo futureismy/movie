@@ -1,0 +1,17 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+@import "./styles/mixin";
+@import "./styles/variable";
+@import "./Components/home/header/header";
+@import "./Components/home/carousel/carousel";
+@import "./Components/home/movie/movie";
+@import "./Components/home/cinema/cinema";
+@import "./Components/home/apps/apps";
+@import "./Components/home/news/news";
+@import "./Components/home/footer/footer";
+@import "./Pages/booking/booking";
+@import "./Pages/detail/detail";
+@import "./Pages/signIn/signIn";
+@import "./Pages/signUp/signUp";
+@import "./Pages/dashboard/dashboard";

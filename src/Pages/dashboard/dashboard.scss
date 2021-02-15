@@ -1,0 +1,26 @@
+#sidebar{
+	height: 100vh;
+    background-color:sandybrown;
+    position: fixed;
+.list-unstyled{
+	display: flex;
+	flex-direction: column;
+	padding-top: 50px;
+}
+}
+.navbar{
+	padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1)
+}
+.form-group{
+    input,select{
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}

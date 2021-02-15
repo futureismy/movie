@@ -1,0 +1,3 @@
+export const GET_USER_INFO = "GET_USER_INFO";
+export const GET_USER_INFO_EDIT = "GET_USER_INFO_EDIT";
+export const CHANGE_KEYWORD = "CHANGE_KEYWORD";
