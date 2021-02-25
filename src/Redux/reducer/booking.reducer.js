@@ -11,7 +11,7 @@ export const bookingReducer = (state = initialState, action) => {
     }
     case CHOICE_CHAIR: {
       const index = state.chairList.findIndex(
-        (chair) => chair.maGhe == payload
+        (chair) => chair.maGhe === payload
       );
       if (index !== -1) {
         let currentChair = state.chairList[index];

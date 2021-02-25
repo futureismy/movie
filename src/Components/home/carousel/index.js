@@ -21,17 +21,17 @@ export default function Carousel() {
   const listCinema = useSelector((state) => state.homeToolReducer.listCinema);
   const dispatch = useDispatch()
   useEffect(()=>{
-  
     dispatch(getMovieHomeToolAPI())
   })
-  console.log(state.maPhim)
+
   const listMovie = useSelector((state) => state.homeToolReducer.listMovie);
   useEffect(()=>{
-    dispatch(getCinemaHomeToolAPI(state.maPhim))
-  },[])
+    if(state.maPhim !== ''){
+      dispatch(getCinemaHomeToolAPI(state.maPhim))
+    }
+  })
   const renderMovie = () => {
     return listMovie.map((movie, index) => {
-      console.log('datalist ' + listMovie)
       return (
         <a
           key={index}
@@ -41,7 +41,7 @@ export default function Carousel() {
               tenPhim: movie.tenPhim,
             });
           }}
-          className="dropdown-item"
+          className="dropdown-item selectItem"
         >
           {movie.tenPhim}
         </a>
@@ -60,7 +60,7 @@ export default function Carousel() {
                 cumRap: cumRap.tenCumRap,
               })
             }
-            class="dropdown-item"
+            class="dropdown-item selectItem"
           >
             {cumRap.tenCumRap}
           </a>
@@ -72,7 +72,7 @@ export default function Carousel() {
   const renderScreenings = () => {
     return listCinema.heThongRapChieu?.map((rap, index) => {
       return rap.cumRapChieu
-        .filter((item) => item.tenCumRap === cumRap.cumRap)
+        .filter((item) => item.tenCumRap == cumRap.cumRap)
         .map((cumRap, index) => {
           return cumRap.lichChieuPhim.map((lichChieuPhim, index) => {
             return (
@@ -86,7 +86,7 @@ export default function Carousel() {
                     maLichChieu:lichChieuPhim.maLichChieu
                   })
                 }
-                className="dropdown-item"
+                className ="dropdown-item selectItem"
               >
                 {format(
                   "dd/MM/yyy | hh:mm",

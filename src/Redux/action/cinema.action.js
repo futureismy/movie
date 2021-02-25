@@ -18,7 +18,7 @@ export const getCinemaAPI = () => {
        `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap?maHeThongRap`,
     })
       .then((res) => {
-        console.log("ma he thong", res);
+        // console.log("ma he thong", res);
         dispatch(getCinema(res.data));
       })
       .catch((err) => {
@@ -43,7 +43,7 @@ export const getCinemaSystemAPI = (maHeThongRap) => {
       url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`,
     })
       .then((res) => {
-        console.log("cinemaSystem", res);
+        // console.log("cinemaSystem", res);
         dispatch(getCinemaSystem(res.data));
       })
       .catch((err) => {
@@ -66,7 +66,7 @@ export const getShowTimeCinemAPI = (maHeThongRap) => {
       url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=GP09`,
     })
       .then((res) => {
-        console.log("time ", res.data);
+        // console.log("time ", res.data);
         dispatch(getShowTimeCinema(res.data));
       })
       .catch((err) => console.log(err));

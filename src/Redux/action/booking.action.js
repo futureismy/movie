@@ -11,7 +11,7 @@ export const getTicketListAPI = (code) => {
       url: `https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${code}`,
     })
       .then((res) => {
-        console.log(res);
+        
         dispatch(getTicketListAction(res.data));
       })
       .catch((err) => {

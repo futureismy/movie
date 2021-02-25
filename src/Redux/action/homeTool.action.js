@@ -13,7 +13,7 @@ export const getMovieHomeToolAPI = () => {
         "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09",
     })
       .then((res) => {
-        console.log('datasa movie search ', res.data);
+        // console.log('datasa movie search ', res.data);
         dispatch(getMovieHomeTool(res.data));
       })
       .catch((err) => {
@@ -22,9 +22,9 @@ export const getMovieHomeToolAPI = () => {
   };
 };
 
-const getCinemaHomeTool = (listCinema)=>({
+const getCinemaHomeTool = (maPhim)=>({
     type:GET_CINEMA_HOMETOOL,
-    payload: listCinema
+    payload: maPhim
 })
 
 export const getCinemaHomeToolAPI = (maPhim)=>{
@@ -33,7 +33,7 @@ export const getCinemaHomeToolAPI = (maPhim)=>{
             method:"GET",
             url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`
         }).then((res)=>{
-          console.log('maPhim ne: ',res)
+          // console.log('maPhim ne: ',res)
             dispatch(getCinemaHomeTool(res.data))
         }).catch((err)=>{
             console.log(err)

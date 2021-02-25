@@ -54,7 +54,7 @@ export default function Detail() {
       return cinema.lstCumRap?.map((cumRap, index) => {
         const { tenCumRap, diaChi } = cumRap;
         console.log(cumRap.tenCumRap, cumRap.diaChi);
-        console.log('danhsp' ,cumRap.danhSachPhim)
+        console.log('danh sach phim' ,cumRap.danhSachPhim)
         return cumRap.danhSachPhim
           ?.filter((movies) => movies.maPhim == maPhim)
           .map((movie, index) => {
@@ -153,7 +153,7 @@ export default function Detail() {
               </span>
               <br />
             </div>
-            {movieDetail.maNhom == "GP08" ? (
+            {movieDetail.maNhom == "GP09" ? (
               ""
             ) : (
               <button className="btnBuyTicketDetail">Mua vé</button>
