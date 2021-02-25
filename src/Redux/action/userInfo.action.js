@@ -17,7 +17,6 @@ export const getUserInfoAPI = () => {
         "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP09",
     })
       .then((res) => {
-        console.log(res);
         dispatch(getUserInfo(res.data));
       })
       .catch((err) => {

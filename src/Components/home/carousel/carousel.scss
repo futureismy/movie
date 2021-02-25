@@ -112,7 +112,7 @@
       }
       .selectItem{
         cursor: pointer;
-        transition: all 0.2s;
+        transition: 0.2s all;
         &:hover{
           background-color: #60c5ef;
           color: $color-white;

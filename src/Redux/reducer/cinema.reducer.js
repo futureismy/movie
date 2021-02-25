@@ -11,11 +11,11 @@ export const cinemaReducer = (state= initialState,action)=>{
             return {...state,listCinema:action.payload,listCinema2:action.payload}
         }
         case GET_CINEMA_SYSTEM:{
-            console.log(action.payload)
+     
             return{...state,listCinemaSystem:action.payload}
         }
         case GET_SHOW_TIMES_CINEMA:{
-            console.log(action.payload)
+           
             return{...state,listShowTimeCinema:action.payload}
         }
         default:{

@@ -12,9 +12,10 @@ export const getMovieListAPI = () => {
     axios({
       method: "GET",
       url:
-        "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP06",
+        "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09",
     })
       .then((res) => {
+        
         dispatch(getMovieList(res.data));
       })
       .catch((err) => {
@@ -35,7 +36,7 @@ export const getMovieDetailAPI = (maPhim) => {
       url: `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`,
     })
       .then((res) => {
-        console.log(res)
+  
         dispatch(getMovieDetail(res.data));
       })
       .catch((err) => {
@@ -57,9 +58,10 @@ export const getMovieListAPI2 = () => {
     axios({
       method: "GET",
       url:
-        "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP08",
+        "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09",
     })
       .then((res) => {
+  
         dispatch(getMovieList2(res.data));
       })
       .catch((err) => {

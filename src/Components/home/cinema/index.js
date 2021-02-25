@@ -6,7 +6,7 @@ import {
   getShowTimeCinemAPI,
 } from "../../../Redux/action/cinema.action";
 import format from "date-format";
-
+import Slider from "react-slick";
 export default function Cinema() {
   const [maHeThongRap, setMaHeThongRap] = useState({ ma: "BHDStar" });
   const [maCum, setMaCumRap] = useState({
@@ -24,7 +24,7 @@ export default function Cinema() {
   );
 
   useEffect(() => {
-    console.log("4");
+    
     dispatch(getCinemaAPI());
   }, []);
   useEffect(()=>{
@@ -37,7 +37,7 @@ export default function Cinema() {
 
 
   const renderCinema = () => {
-    console.log("1");
+ 
     return cinema?.map((cinema, index) => {
       let opacity = {};
       if (cinema.maHeThongRap == maHeThongRap.ma) {
@@ -63,7 +63,7 @@ export default function Cinema() {
   };
 
   const renderCinemaSystem = () => {
-    console.log("2");
+  
     return cinemaSystem?.map((cinemaSystem, index) => {
       let opacity = {};
       if (maCum.ma == cinemaSystem.maCumRap) {
@@ -93,10 +93,9 @@ export default function Cinema() {
   };
 
   const renderShowTimeCinema = () => {
-    console.log("3");
+   
     return showTimeCienma?.map((time, index) => {
-      console.log("maCumRap", maCum.ma);
-      console.log("time", time);
+     
       return time.lstCumRap
         .filter((item) => item.maCumRap === maCum.ma)
         .map((listCumRap, index) => {
@@ -143,7 +142,19 @@ export default function Cinema() {
         });
     });
   };
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 1,
+    speed: 500,
+    rows: 2,
+    slidesPerRow: 2
+  };
   return (
+    <div>
+      <Slider {...settings}>
     <div id="cinemaComplex" className="d-none d-lg-block">
       <div className="row">
         <div className="col-1">
@@ -156,6 +167,8 @@ export default function Cinema() {
           <div className="listMovies">{renderShowTimeCinema()}</div>
         </div>
       </div>
+    </div>
+    </Slider>
     </div>
   );
 }

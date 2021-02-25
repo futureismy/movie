@@ -12,7 +12,7 @@ export const signInAPI = (user, history) => {
       data: user,
     })
       .then((res) => {
-        console.log(res);
+      
         dispatch(signIn(res.data));
         localStorage.setItem("userLogin", JSON.stringify(res.data));
         history.goBack();

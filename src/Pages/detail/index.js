@@ -13,13 +13,13 @@ export default function Detail() {
   });
  
   const movieDetail = useSelector((state) => state.movieReducer.movieDetail);
-  console.log('movei' + movieDetail)  
+
   const listCalendarCinema = useSelector(
     (state) => state.cinemaReducer.listShowTimeCinema
   );
-  console.log(movieDetail)
+  
   const listCinema = useSelector((state) => state.cinemaReducer.listCinema);
-  console.log('ga',listCinema)
+ 
   useEffect(()=>{
     dispatch(getMovieDetailAPI(maPhim));
     dispatch(getCinemaAPI());
@@ -29,7 +29,7 @@ export default function Detail() {
     return listCinema?.map((cinema, index) => {
       const { tenHeThongRap, logo } = cinema;
       let opacity = {};
-      if (cinema.maHeThongRap == state.maHeThongRap) {
+      if (cinema.maHeThongRap === state.maHeThongRap) {
         opacity = { opacity: 1 };
       }
       return (
@@ -50,15 +50,14 @@ export default function Detail() {
   const renderCalendarCinema = () => {
     return listCalendarCinema?.map((cinema, index) => {
       const { tenHeThongRap, mahom } = cinema;
-      console.log('he thong' ,cinema);
+     
       return cinema.lstCumRap?.map((cumRap, index) => {
         const { tenCumRap, diaChi } = cumRap;
-        console.log(cumRap.tenCumRap, cumRap.diaChi);
-        console.log('danh sach phim' ,cumRap.danhSachPhim)
+       
         return cumRap.danhSachPhim
           ?.filter((movies) => movies.maPhim == maPhim)
           .map((movie, index) => {
-            console.log(movie.tenPhim);
+           
             return (
               <div key={index} className="wrapMovie">
                 <div className="wrapInfo d-flex align-items-center">
@@ -153,7 +152,7 @@ export default function Detail() {
               </span>
               <br />
             </div>
-            {movieDetail.maNhom == "GP09" ? (
+            {movieDetail.maNhom === "GP09" ? (
               ""
             ) : (
               <button className="btnBuyTicketDetail">Mua vé</button>

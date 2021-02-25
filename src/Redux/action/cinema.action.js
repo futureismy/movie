@@ -18,7 +18,6 @@ export const getCinemaAPI = () => {
        `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap?maHeThongRap`,
     })
       .then((res) => {
-        // console.log("ma he thong", res);
         dispatch(getCinema(res.data));
       })
       .catch((err) => {
